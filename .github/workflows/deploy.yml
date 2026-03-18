@@ -28,7 +28,7 @@ jobs:
              cd portfolio
              git pull origin main
            else
-             git clone https://github.com/${{ github.repository }}.git
+             git clone https://github.com/noman2111ni/Nouman-devops-portfolio.git
              cd portfolio
            fi
            npm install

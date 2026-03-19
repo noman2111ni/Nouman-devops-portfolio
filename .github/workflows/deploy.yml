@@ -44,6 +44,7 @@ jobs:
               echo "📥 Cloning repo..."
               git clone https://github.com/noman2111ni/Nouman-devops-portfolio.git /home/ec2-user/portfolio
               cd /home/ec2-user/portfolio
+  
             fi
 
             # Dependencies install

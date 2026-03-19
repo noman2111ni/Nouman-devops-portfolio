@@ -8,7 +8,7 @@ export const personalInfo = {
   linkedin: "www.linkedin.com/in/nomanshabeer",
   location: "Pakistan 🇵🇰",
   available: true,
-  bio: "Passionate DevOps Engineer with 3 months of experience automating infrastructure, building CI/CD pipelines, and scaling cloud-native applications. I bridge the gap between development and operations to deliver reliable, secure, and fast software.",
+  bio: "Passionate DevOps Engineer with 3 months of experience automating infra building CI/CD pipelines, and scaling cloud-native applications. I bridge the gap between development and operations to deliver reliable, secure, and fast software.",
   typewriterTexts: [
     "DevOps Engineer",
     "Cloud Architect",

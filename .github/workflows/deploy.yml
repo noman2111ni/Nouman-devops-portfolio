@@ -11,19 +11,17 @@ jobs:
 
     steps:
       - name: ⬇️ Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: 🟢 Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '18'
 
       - name: 📦 Install Dependencies
-        working-directory: nouman-portfolio
         run: npm install
 
       - name: 🏗️ Build Project
-        working-directory: nouman-portfolio
         run: npm run build
         env:
           CI: false
@@ -39,23 +37,21 @@ jobs:
 
             # Repo clone ya pull
             if [ -d "/home/ec2-user/portfolio" ]; then
-              echo "📂 Repo exists — pulling latest..."
+              echo "📂 Pulling latest..."
               cd /home/ec2-user/portfolio
               git pull origin main
             else
               echo "📥 Cloning repo..."
               git clone https://github.com/noman2111ni/Nouman-devops-portfolio.git /home/ec2-user/portfolio
+              cd /home/ec2-user/portfolio
             fi
-
-            # Sahi folder mein jao
-            cd /home/ec2-user/portfolio/nouman-portfolio
 
             # Dependencies install
             echo "📦 Installing dependencies..."
             npm install
 
             # Build
-            echo "🏗️ Building project..."
+            echo "🏗️ Building..."
             CI=false npm run build
 
             # Nginx mein copy
@@ -64,7 +60,6 @@ jobs:
             sudo cp -r build/* /usr/share/nginx/html/
 
             # Nginx restart
-            echo "🔄 Restarting Nginx..."
             sudo systemctl restart nginx
 
             echo "✅ Deployment complete!"

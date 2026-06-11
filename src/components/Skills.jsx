@@ -6,10 +6,10 @@ function SkillBar({ name, level, color, visible }) {
   return (
     <div style={{ marginBottom:16 }}>
       <div style={{ display:"flex", justifyContent:"space-between", marginBottom:7 }}>
-        <span style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"0.78rem", color:"#c0cce8" }}>{name}</span>
+        <span style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"0.78rem", color:"#6b7280" }}>{name}</span>
         <span style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"0.72rem", color }}>{level}%</span>
       </div>
-      <div style={{ background:"rgba(255,255,255,0.05)", height:5, borderRadius:3, overflow:"hidden" }}>
+      <div style={{ background:"rgba(0,0,0,0.05)", height:5, borderRadius:3, overflow:"hidden" }}>
         <div style={{
           height:"100%", borderRadius:3,
           background:`linear-gradient(90deg, ${color}, ${color}70)`,
@@ -30,8 +30,8 @@ function SkillCard({ category, icon, color, items }) {
       onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)}
       style={{
         padding:"28px 24px",
-        background: hovered ? "rgba(255,255,255,0.05)" : "rgba(255,255,255,0.02)",
-        border:`1px solid ${hovered ? color+"40" : "rgba(255,255,255,0.06)"}`,
+        background: hovered ? "rgba(0,0,0,0.05)" : "rgba(0,0,0,0.02)",
+        border:`1px solid ${hovered ? color+"40" : "rgba(0,0,0,0.06)"}`,
         borderTop:`2px solid ${color}`,
         opacity:visible?1:0, transform:visible?"translateY(0)":"translateY(28px)",
         transition:"all 0.6s ease",
@@ -61,11 +61,11 @@ export default function Skills() {
     <section id="skills" style={{ padding: isMobile ? "80px 24px" : "110px 60px" }}>
       <div style={{ maxWidth:1200, margin:"0 auto" }}>
         <div ref={ref} style={{ marginBottom:60, opacity:visible?1:0, transform:visible?"translateY(0)":"translateY(24px)", transition:"all 0.7s ease" }}>
-          <p style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"0.72rem", letterSpacing:"0.35em", color:"#00e5ff", textTransform:"uppercase", marginBottom:12 }}>// Technical Skills</p>
+          <p style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"0.72rem", letterSpacing:"0.35em", color:"#0084d9", textTransform:"uppercase", marginBottom:12 }}>// Technical Skills</p>
           <h2 style={{ fontSize:"clamp(2rem,5vw,3.5rem)", fontWeight:800, lineHeight:1.1 }}>
-            My <span style={{ background:"linear-gradient(135deg,#ff6b35,#8b5cf6)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text" }}>Arsenal</span>
+            My <span style={{ background:"linear-gradient(135deg,#ff6b35,#7c3aed)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text" }}>Arsenal</span>
           </h2>
-          <p style={{ marginTop:16, color:"rgba(240,244,255,0.4)", fontSize:"0.98rem", maxWidth:500 }}>Tools and technologies I use daily to build, deploy, and scale infrastructure.</p>
+          <p style={{ marginTop:16, color:"rgba(26,26,26,0.4)", fontSize:"0.98rem", maxWidth:500 }}>Tools and technologies I use daily to build, deploy, and scale infrastructure.</p>
         </div>
         <div style={{ display:"grid", gridTemplateColumns:cols, gap:20 }}>
           {skills.map((skill,i) => <SkillCard key={i} {...skill} />)}

@@ -12,15 +12,15 @@ function TimelineItem({ year, role, company, type, color, points, index }) {
 
   const Card = () => (
     <div style={{
-      padding:"24px 22px", background:"rgba(255,255,255,0.02)",
+      padding:"24px 22px", background:"rgba(0,0,0,0.02)",
       border:`1px solid ${color}25`, borderLeft:`3px solid ${color}`,
     }}>
       <div style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"0.68rem", color, letterSpacing:"0.18em", textTransform:"uppercase", marginBottom:8 }}>{year} · {type}</div>
-      <h3 style={{ fontWeight:800, fontSize:"1rem", color:"#f0f4ff", marginBottom:4 }}>{role}</h3>
-      <div style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"0.78rem", color:"#3d4a6b", marginBottom:14 }}>{company}</div>
+      <h3 style={{ fontWeight:800, fontSize:"1rem", color:"#1a1a1a", marginBottom:4 }}>{role}</h3>
+      <div style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"0.78rem", color:"#6b7280", marginBottom:14 }}>{company}</div>
       <ul style={{ listStyle:"none" }}>
         {points.map((p,i) => (
-          <li key={i} style={{ fontSize:"0.84rem", color:"rgba(240,244,255,0.5)", marginBottom:7, display:"flex", gap:8 }}>
+          <li key={i} style={{ fontSize:"0.84rem", color:"rgba(26,26,26,0.5)", marginBottom:7, display:"flex", gap:8 }}>
             <span style={{ color, flexShrink:0 }}>›</span> {p}
           </li>
         ))}
@@ -35,9 +35,9 @@ function TimelineItem({ year, role, company, type, color, points, index }) {
       transition:`all 0.7s ${index*0.1}s ease`,
     }}>
       <div style={{ display:"flex", flexDirection:"column", alignItems:"center", flexShrink:0 }}>
-        <div style={{ flex:1, width:1, background:"rgba(255,255,255,0.06)" }} />
-        <div style={{ width:14, height:14, borderRadius:"50%", background:color, boxShadow:`0 0 10px ${color}80`, border:"3px solid #060811", flexShrink:0 }} />
-        <div style={{ flex:1, width:1, background:"rgba(255,255,255,0.06)" }} />
+        <div style={{ flex:1, width:1, background:"rgba(0,0,0,0.06)" }} />
+        <div style={{ width:14, height:14, borderRadius:"50%", background:color, boxShadow:`0 0 10px ${color}80`, border:"3px solid #ffffff", flexShrink:0 }} />
+        <div style={{ flex:1, width:1, background:"rgba(0,0,0,0.06)" }} />
       </div>
       <div style={{ flex:1, paddingTop:4 }}><Card /></div>
     </div>
@@ -52,9 +52,9 @@ function TimelineItem({ year, role, company, type, color, points, index }) {
     }}>
       <div style={{ padding:"0 36px 0 0" }}>{isLeft ? <Card /> : <div />}</div>
       <div style={{ display:"flex", flexDirection:"column", alignItems:"center" }}>
-        <div style={{ flex:1, width:1, background:"rgba(255,255,255,0.06)" }} />
-        <div style={{ width:16, height:16, borderRadius:"50%", background:color, boxShadow:`0 0 12px ${color}80`, flexShrink:0, border:"3px solid #060811" }} />
-        <div style={{ flex:1, width:1, background:"rgba(255,255,255,0.06)" }} />
+        <div style={{ flex:1, width:1, background:"rgba(0,0,0,0.06)" }} />
+        <div style={{ width:16, height:16, borderRadius:"50%", background:color, boxShadow:`0 0 12px ${color}80`, flexShrink:0, border:"3px solid #ffffff" }} />
+        <div style={{ flex:1, width:1, background:"rgba(0,0,0,0.06)" }} />
       </div>
       <div style={{ padding:"0 0 0 36px" }}>{!isLeft ? <Card /> : <div />}</div>
     </div>
@@ -73,9 +73,9 @@ export default function Experience() {
     <section id="experience" style={{ padding: isMobile?"80px 24px":"110px 60px" }}>
       <div style={{ maxWidth:1100, margin:"0 auto" }}>
         <div ref={ref} style={{ marginBottom:70, textAlign:"center", opacity:visible?1:0, transform:visible?"translateY(0)":"translateY(24px)", transition:"all 0.7s ease" }}>
-          <p style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"0.72rem", letterSpacing:"0.35em", color:"#00e5ff", textTransform:"uppercase", marginBottom:12 }}>// Experience</p>
+          <p style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"0.72rem", letterSpacing:"0.35em", color:"#0084d9", textTransform:"uppercase", marginBottom:12 }}>// Experience</p>
           <h2 style={{ fontSize:"clamp(2rem,5vw,3.5rem)", fontWeight:800, lineHeight:1.1 }}>
-            My <span style={{ background:"linear-gradient(135deg,#8b5cf6,#ff6b35)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text" }}>Journey</span>
+            My <span style={{ background:"linear-gradient(135deg,#7c3aed,#ff6b35)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text" }}>Journey</span>
           </h2>
         </div>
         {experience.map((item,i) => <TimelineItem key={i} {...item} index={i} />)}

@@ -63,7 +63,7 @@ export default function Navbar() {
           }}>N</div>
           <span style={{
             fontFamily: "'JetBrains Mono',monospace", fontWeight: 700,
-            fontSize: "0.95rem", color: "#f0f4ff", letterSpacing: "0.05em",
+            fontSize: "0.95rem", color: "#000", letterSpacing: "0.05em",
           }}>Nouman <span style={{ color: "#00e5ff" }}>DevOps</span></span>
         </div>
 

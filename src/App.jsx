@@ -16,15 +16,15 @@ function Cursor() {
       <div style={{
         position: "fixed", pointerEvents: "none", zIndex: 9999,
         width: 10, height: 10, borderRadius: "50%",
-        background: "#00e5ff",
+        background: "#0084d9",
         left: x, top: y, transform: "translate(-50%,-50%)",
         transition: "transform 0.05s",
-        mixBlendMode: "difference",
+        mixBlendMode: "multiply",
       }} />
       <div style={{
         position: "fixed", pointerEvents: "none", zIndex: 9998,
         width: 34, height: 34, borderRadius: "50%",
-        border: "1px solid rgba(0,229,255,0.35)",
+        border: "1px solid rgba(0,132,217,0.4)",
         left: x, top: y, transform: "translate(-50%,-50%)",
         transition: "left 0.12s ease, top 0.12s ease",
       }} />

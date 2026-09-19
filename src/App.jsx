@@ -16,7 +16,7 @@ function Cursor() {
       <div style={{
         position: "fixed", pointerEvents: "none", zIndex: 9999,
         width: 10, height: 10, borderRadius: "50%",
-        background: "#0084d9",
+        background: "#2563eb",
         left: x, top: y, transform: "translate(-50%,-50%)",
         transition: "transform 0.05s",
         mixBlendMode: "multiply",
@@ -24,7 +24,7 @@ function Cursor() {
       <div style={{
         position: "fixed", pointerEvents: "none", zIndex: 9998,
         width: 34, height: 34, borderRadius: "50%",
-        border: "1px solid rgba(0,132,217,0.4)",
+        border: "1px solid rgba(37,99,235,0.45)",
         left: x, top: y, transform: "translate(-50%,-50%)",
         transition: "left 0.12s ease, top 0.12s ease",
       }} />

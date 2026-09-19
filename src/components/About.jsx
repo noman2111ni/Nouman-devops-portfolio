@@ -8,14 +8,14 @@ function StatCard({ number, label, suffix, color }) {
   return (
     <div ref={ref} style={{
       textAlign: "center", padding: "50px 20px",
-      background: "rgba(0,0,0,0.02)", border: `1px solid ${color}25`, borderTop: `3px solid ${color}`,
+      background: "rgba(15,23,42,0.02)", border: `1px solid ${color}25`, borderTop: `3px solid ${color}`,
       opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(24px)", transition: "all 0.6s ease",
     }}
-      onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = `0 20px 40px ${color}15`; }}
+      onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = `0 20px 40px ${color}18`; }}
       onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
     >
       <div style={{ fontSize: "2.5rem", fontWeight: 800, color, lineHeight: 1 }}>{count}{suffix}</div>
-      <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.65rem", letterSpacing: "0.2em", color: "#6b7280", marginTop: 8, textTransform: "uppercase" }}>{label}</div>
+      <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.65rem", letterSpacing: "0.2em", color: "#475569", marginTop: 8, textTransform: "uppercase" }}>{label}</div>
     </div>
   );
 }
@@ -29,55 +29,53 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" style={{ padding: isMobile ? "80px 24px" : "110px 60px", background: "rgba(240,243,247,0.5)" }}>
+    <section id="about" style={{ padding: isMobile ? "80px 24px" : "110px 60px", background: "rgba(37,99,235,0.03)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div ref={ref} style={{ marginBottom: 60, opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(24px)", transition: "all 0.7s ease" }}>
-          <p style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.72rem", letterSpacing: "0.35em", color: "#0084d9", textTransform: "uppercase", marginBottom: 12 }}>// About Me</p>
+          <p style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.72rem", letterSpacing: "0.35em", color: "#2563eb", textTransform: "uppercase", marginBottom: 12 }}>// About Me</p>
           <h2 style={{ fontSize: "clamp(2rem,5vw,3.5rem)", fontWeight: 800, lineHeight: 1.1 }}>
-            Who I <span style={{ background: "linear-gradient(135deg,#0084d9,#7c3aed)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Am</span>
+            Who I <span style={{ background: "linear-gradient(135deg,#2563eb,#7c3aed)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Am</span>
           </h2>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 48 : 80, alignItems: "start", marginBottom: 60 }}>
-          {/* Left */}
           <div style={{ opacity: visible ? 1 : 0, transform: visible ? "translateX(0)" : "translateX(-30px)", transition: "all 0.7s 0.2s ease" }}>
-            <p style={{ fontSize: "1rem", lineHeight: 1.9, color: "rgba(26,26,26,0.6)", marginBottom: 28 }}>{personalInfo.bio}</p>
+            <p style={{ fontSize: "1rem", lineHeight: 1.9, color: "rgba(15,23,42,0.7)", marginBottom: 28 }}>{personalInfo.bio}</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              {[["📍 Location", personalInfo.location], ["📧 Email", personalInfo.email], ["🐙 GitHub", personalInfo.github], ["💼 LinkedIn", personalInfo.linkedin]].map(([k, v]) => (
+              {[['📍 Location', personalInfo.location], ['📧 Email', personalInfo.email], ['🐙 GitHub', personalInfo.github], ['💼 LinkedIn', personalInfo.linkedin]].map(([k, v]) => (
                 <div key={k} style={{ display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
-                  <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.7rem", color: "#6b7280", letterSpacing: "0.1em", minWidth: 110 }}>{k}</span>
-                  <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.78rem", color: "#0084d9", wordBreak: "break-all" }}>{v}</span>
+                  <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.7rem", color: "#475569", letterSpacing: "0.1em", minWidth: 110 }}>{k}</span>
+                  <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.78rem", color: "#2563eb", wordBreak: "break-all" }}>{v}</span>
                 </div>
               ))}
             </div>
             <button style={{
-              marginTop: 32, padding: "13px 32px", background: "#0084d9", color: "#ffffff",
+              marginTop: 32, padding: "13px 32px", background: "#2563eb", color: "#ffffff",
               fontFamily: "'JetBrains Mono',monospace", fontSize: "0.78rem", fontWeight: 700,
               letterSpacing: "0.15em", textTransform: "uppercase", border: "none", cursor: "pointer",
               clipPath: "polygon(7px 0%,100% 0%,calc(100% - 7px) 100%,0% 100%)", transition: "all 0.3s",
             }}
-              onMouseEnter={e => { e.target.style.background = "#ff6b35"; e.target.style.transform = "translateY(-2px)"; }}
-              onMouseLeave={e => { e.target.style.background = "#0084d9"; e.target.style.transform = "translateY(0)"; }}
+              onMouseEnter={e => { e.target.style.background = "#f97316"; e.target.style.transform = "translateY(-2px)"; }}
+              onMouseLeave={e => { e.target.style.background = "#2563eb"; e.target.style.transform = "translateY(0)"; }}
             >Download CV</button>
           </div>
 
-          {/* Right — Certs */}
           <div style={{ opacity: visible ? 1 : 0, transform: visible ? "translateX(0)" : "translateX(30px)", transition: "all 0.7s 0.3s ease" }}>
-            <p style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.72rem", letterSpacing: "0.25em", color: "#ff6b35", textTransform: "uppercase", marginBottom: 20 }}>Certifications</p>
+            <p style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.72rem", letterSpacing: "0.25em", color: "#f97316", textTransform: "uppercase", marginBottom: 20 }}>Certifications</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {certifications.map((cert, i) => (
                 <div key={i} style={{
                   display: "flex", alignItems: "center", gap: 16, padding: "16px 20px",
-                  background: "rgba(0,0,0,0.02)", border: `1px solid ${cert.color}20`, borderLeft: `3px solid ${cert.color}`,
+                  background: "rgba(15,23,42,0.02)", border: `1px solid ${cert.color}20`, borderLeft: `3px solid ${cert.color}`,
                   transition: "all 0.3s",
                 }}
-                  onMouseEnter={e => { e.currentTarget.style.background = "rgba(0,0,0,0.04)"; e.currentTarget.style.transform = "translateX(4px)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = "rgba(0,0,0,0.02)"; e.currentTarget.style.transform = "translateX(0)"; }}
+                  onMouseEnter={e => { e.currentTarget.style.background = "rgba(15,23,42,0.04)"; e.currentTarget.style.transform = "translateX(4px)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = "rgba(15,23,42,0.02)"; e.currentTarget.style.transform = "translateX(0)"; }}
                 >
                   <span style={{ fontSize: "1.4rem" }}>{cert.icon}</span>
                   <div>
                     <div style={{ fontWeight: 700, fontSize: "0.88rem", color: cert.color }}>{cert.name}</div>
-                    <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.68rem", color: "#6b7280", marginTop: 3 }}>{cert.org} · {cert.year}</div>
+                    <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.68rem", color: "#475569", marginTop: 3 }}>{cert.org} · {cert.year}</div>
                   </div>
                 </div>
               ))}
@@ -85,7 +83,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Stats */}
         <div style={{
           display: "flex",
           alignItems: "center",
@@ -96,8 +93,8 @@ export default function About() {
             display: "grid",
             gridTemplateColumns: isMobile ? "repeat(2,1fr)" : "repeat(3,1fr)",
             gap: 40,
-            maxWidth: isMobile ? 500 : "100%",   // ← width limit
-            margin: "auto",                     // ← center
+            maxWidth: isMobile ? 500 : "100%",
+            margin: "auto",
           }}>
             {stats.map((s, i) => <StatCard key={i} {...s} />)}
           </div>

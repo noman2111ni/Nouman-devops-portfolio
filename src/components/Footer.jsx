@@ -11,19 +11,20 @@ export default function Footer() {
   return (
     <footer style={{
       padding: isMobile ? "28px 24px" : "36px 60px",
-      borderTop:"1px solid rgba(0,0,0,0.05)",
+      borderTop:"1px solid rgba(15,23,42,0.06)",
       display:"flex", justifyContent:"space-between", alignItems:"center",
       flexDirection: isMobile ? "column" : "row", gap: isMobile ? 14 : 0,
       textAlign: isMobile ? "center" : "left",
+      background: "rgba(248,250,252,0.9)",
     }}>
-      <div style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"0.72rem", color:"#6b7280" }}>
-        © 2024 <span style={{ color:"#0084d9" }}>{personalInfo.fullName}</span> · Built with React ⚡
+      <div style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"0.72rem", color:"#475569" }}>
+        © 2024 <span style={{ color:"#2563eb" }}>{personalInfo.fullName}</span> · Built with React ⚡
       </div>
-      <div style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"0.7rem", color:"#6b7280", display:"flex", gap:24 }}>
+      <div style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"0.7rem", color:"#475569", display:"flex", gap:24 }}>
         {["GitHub","LinkedIn","Email"].map(link => (
-          <a key={link} href="#" style={{ color:"#6b7280", textDecoration:"none", transition:"color 0.3s" }}
-            onMouseEnter={e=>e.target.style.color="#0084d9"}
-            onMouseLeave={e=>e.target.style.color="#6b7280"}
+          <a key={link} href="#" style={{ color:"#475569", textDecoration:"none", transition:"color 0.3s" }}
+            onMouseEnter={e=>e.target.style.color="#2563eb"}
+            onMouseLeave={e=>e.target.style.color="#475569"}
           >{link}</a>
         ))}
       </div>

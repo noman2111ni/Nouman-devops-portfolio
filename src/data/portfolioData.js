@@ -18,28 +18,27 @@ export const personalInfo = {
 };
 
 export const stats = [
-  { number: 3, label: "Months Experience", suffix: "+", color: "#00e5ff" },
-  { number: 3, label: "Projects Done", suffix: "+", color: "#ff6b35" },
-  { number: 3, label: "CI/CD Pipelines", suffix: "+", color: "#00e5ff" },
+  { number: 3, label: "Months Experience", suffix: "+", color: "#38bdf8" },
+  { number: 3, label: "Projects Done", suffix: "+", color: "#f97316" },
+  { number: 3, label: "CI/CD Pipelines", suffix: "+", color: "#7c3aed" },
 ];
 
 export const skills = [
   {
     category: "Containerization",
     icon: "🐳",
-    color: "#00e5ff",
+    color: "#38bdf8",
     items: [
       { name: "Docker", level: 95 },
       { name: "Linux Containers", level: 90 },
-      { name :"Terraform", level: 85 },
-      {name : "Amazon ECS" , level: 80}
-
+      { name: "Terraform", level: 85 },
+      { name: "Amazon ECS", level: 80 },
     ],
   },
   {
     category: "Cloud Platforms",
     icon: "☁️",
-    color: "#ff6b35",
+    color: "#f97316",
     items: [
       { name: "AWS", level: 88 },
       { name: "Azure", level: 80 },
@@ -58,17 +57,16 @@ export const skills = [
   {
     category: "CI/CD",
     icon: "🔄",
-    color: "#00e5ff",
+    color: "#38bdf8",
     items: [
       { name: "GitHub Actions", level: 95 },
       { name: "Jenkins", level: 88 },
-
     ],
   },
   {
     category: "Monitoring",
     icon: "📊",
-    color: "#ff6b35",
+    color: "#f97316",
     items: [
       { name: "Prometheus", level: 85 },
       { name: "Datadog", level: 78 },
@@ -80,7 +78,6 @@ export const skills = [
     color: "#8b5cf6",
     items: [
       { name: "Bash/Shell", level: 92 },
-
       { name: "YAML/JSON", level: 95 },
     ],
   },
@@ -89,10 +86,10 @@ export const skills = [
 export const projects = [
   {
     id: 1,
-    title: "GitHub  CI/CD Pipeline",
+    title: "GitHub CI/CD Pipeline",
     desc: "End-to-end GitOps pipeline using GitHub Actions and ArgoCD with blue-green deployments, automated testing gates, and Slack notifications.",
-    tags: ["GitHub Actions","Slack"],
-    color: "#ff6b35",
+    tags: ["GitHub Actions", "Slack"],
+    color: "#f97316",
     icon: "🔄",
     github: "#",
     live: "#",
@@ -102,14 +99,13 @@ export const projects = [
     id: 3,
     title: "Multi-Cloud IaC Framework",
     desc: "Reusable Terraform module library for AWS, Azure and GCP infrastructure provisioning. Reduced infra setup time from days to 20 minutes.",
-    tags: ["Terraform", "AWS", "Azure",],
+    tags: ["Terraform", "AWS", "Azure"],
     color: "#8b5cf6",
     icon: "☁️",
     github: "#",
     live: "#",
     highlight: false,
   },
- 
   {
     id: 6,
     title: "Security Hardening Suite",
@@ -129,7 +125,7 @@ export const experience = [
     role: "Junior DevOps Engineer",
     company: "TechCorp Ltd.",
     type: "Full-time",
-    color: "#00e5ff",
+    color: "#38bdf8",
     points: [
       "Led cloud migration of 10+ microservices to AWS EKS",
       "Reduced deployment time by 80% with GitHub Actions pipelines",
@@ -140,17 +136,16 @@ export const experience = [
     role: "DevOps Engineer",
     company: "DataSystems Inc.",
     type: "Full-time",
-    color: "#ff6b35",
+    color: "#f97316",
     points: [
       "Built Jenkins & GitHub Actions CI/CD pipelines",
       "Containerized 5+ legacy apps using Docker",
       "Automated infra provisioning with Terraform + Ansible",
     ],
   },
-
 ];
 
 export const certifications = [
-  { name: "AWS Solutions Architect", org: "Amazon Web Services", year: "2023", color: "#ff6b35", icon: "☁️" },
+  { name: "AWS Solutions Architect", org: "Amazon Web Services", year: "2023", color: "#f97316", icon: "☁️" },
   { name: "HashiCorp Terraform", org: "HashiCorp", year: "2022", color: "#8b5cf6", icon: "🏗️" },
 ];

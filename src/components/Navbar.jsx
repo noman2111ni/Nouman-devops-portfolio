@@ -33,11 +33,10 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Progress bar */}
       <div style={{
         position: "fixed", top: 0, left: 0, zIndex: 200,
         height: 3, width: `${progress}%`,
-        background: "linear-gradient(90deg,#00e5ff,#8b5cf6,#ff6b35)",
+        background: "linear-gradient(90deg,#2563eb,#7c3aed,#f97316)",
         transition: "width 0.1s",
       }} />
 
@@ -45,29 +44,27 @@ export default function Navbar() {
         position: "fixed", top: 3, left: 0, right: 0, zIndex: 100,
         display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: isMobile ? "16px 24px" : "18px 60px",
-        background: scrolled ? "rgba(6,8,17,0.95)" : "transparent",
-        backdropFilter: scrolled ? "blur(20px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(0,229,255,0.08)" : "none",
+        background: scrolled ? "rgba(248,250,252,0.83)" : "transparent",
+        backdropFilter: scrolled ? "blur(18px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(37,99,235,0.08)" : "none",
         transition: "all 0.4s ease",
       }}>
-        {/* Logo */}
         <div onClick={() => handleNav("#hero")}
           style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: 10 }}>
           <div style={{
-            width: 36, height: 36, border: "2px solid #00e5ff",
+            width: 36, height: 36, border: "2px solid #2563eb",
             display: "flex", alignItems: "center", justifyContent: "center",
             fontFamily: "'JetBrains Mono',monospace", fontWeight: 700,
-            color: "#00e5ff", fontSize: "1rem",
+            color: "#2563eb", fontSize: "1rem",
             clipPath: "polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%)",
-            background: "rgba(0,229,255,0.08)",
+            background: "rgba(37,99,235,0.08)",
           }}>N</div>
           <span style={{
             fontFamily: "'JetBrains Mono',monospace", fontWeight: 700,
-            fontSize: "0.95rem", color: "#000", letterSpacing: "0.05em",
-          }}>Nouman <span style={{ color: "#00e5ff" }}>DevOps</span></span>
+            fontSize: "0.95rem", color: "#0f172a", letterSpacing: "0.05em",
+          }}>Nouman <span style={{ color: "#2563eb" }}>DevOps</span></span>
         </div>
 
-        {/* Desktop links */}
         {!isMobile && (
           <ul style={{ display: "flex", gap: 32, listStyle: "none" }}>
             {navLinks.map(link => (
@@ -76,35 +73,33 @@ export default function Navbar() {
                   background: "none", border: "none", cursor: "pointer",
                   fontFamily: "'JetBrains Mono',monospace",
                   fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase",
-                  color: active === link.href ? "#00e5ff" : "#3d4a6b",
+                  color: active === link.href ? "#2563eb" : "#475569",
                   padding: "4px 0",
-                  borderBottom: active === link.href ? "1px solid #00e5ff" : "1px solid transparent",
+                  borderBottom: active === link.href ? "1px solid #2563eb" : "1px solid transparent",
                   transition: "all 0.3s",
                 }}
-                  onMouseEnter={e => e.target.style.color = "#00e5ff"}
-                  onMouseLeave={e => e.target.style.color = active === link.href ? "#00e5ff" : "#3d4a6b"}
+                  onMouseEnter={e => e.target.style.color = "#2563eb"}
+                  onMouseLeave={e => e.target.style.color = active === link.href ? "#2563eb" : "#475569"}
                 >{link.label}</button>
               </li>
             ))}
           </ul>
         )}
 
-        {/* Desktop CTA */}
         {!isMobile && (
           <button onClick={() => handleNav("#contact")} style={{
             padding: "10px 24px", background: "transparent",
-            border: "1px solid rgba(0,229,255,0.5)", color: "#00e5ff",
+            border: "1px solid rgba(37,99,235,0.28)", color: "#2563eb",
             fontFamily: "'JetBrains Mono',monospace", fontSize: "0.75rem",
             letterSpacing: "0.15em", textTransform: "uppercase", cursor: "pointer",
             clipPath: "polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%)",
             transition: "all 0.3s",
           }}
-            onMouseEnter={e => { e.target.style.background = "rgba(0,229,255,0.1)"; }}
+            onMouseEnter={e => { e.target.style.background = "rgba(37,99,235,0.08)"; }}
             onMouseLeave={e => { e.target.style.background = "transparent"; }}
           >Hire Me</button>
         )}
 
-        {/* Hamburger */}
         {isMobile && (
           <button onClick={() => setMenuOpen(o => !o)} style={{
             background: "none", border: "none", cursor: "pointer",
@@ -113,7 +108,7 @@ export default function Navbar() {
             {[0,1,2].map(i => (
               <span key={i} style={{
                 display: "block", width: 24, height: 2,
-                background: "#00e5ff", borderRadius: 2,
+                background: "#2563eb", borderRadius: 2,
                 transition: "all 0.3s",
                 transform: menuOpen
                   ? i === 0 ? "rotate(45deg) translate(5px,5px)"
@@ -127,12 +122,11 @@ export default function Navbar() {
         )}
       </nav>
 
-      {/* Mobile Menu Drawer */}
       {isMobile && (
         <div style={{
           position: "fixed", top: 60, left: 0, right: 0, zIndex: 99,
-          background: "rgba(6,8,17,0.98)", backdropFilter: "blur(20px)",
-          borderBottom: "1px solid rgba(0,229,255,0.1)",
+          background: "rgba(248,250,252,0.96)", backdropFilter: "blur(20px)",
+          borderBottom: "1px solid rgba(37,99,235,0.08)",
           padding: menuOpen ? "24px 24px 32px" : "0 24px",
           maxHeight: menuOpen ? 400 : 0,
           overflow: "hidden",
@@ -146,9 +140,9 @@ export default function Navbar() {
                   width: "100%", textAlign: "left",
                   fontFamily: "'JetBrains Mono',monospace",
                   fontSize: "0.9rem", letterSpacing: "0.15em", textTransform: "uppercase",
-                  color: active === link.href ? "#00e5ff" : "#5a6a8a",
+                  color: active === link.href ? "#2563eb" : "#475569",
                   padding: "14px 0",
-                  borderBottom: "1px solid rgba(255,255,255,0.04)",
+                  borderBottom: "1px solid rgba(15,23,42,0.04)",
                   transition: "color 0.3s",
                 }}>{link.label}</button>
               </li>
@@ -156,7 +150,7 @@ export default function Navbar() {
             <li style={{ marginTop: 16 }}>
               <button onClick={() => handleNav("#contact")} style={{
                 width: "100%", padding: "14px",
-                background: "#00e5ff", color: "#060811",
+                background: "#2563eb", color: "#ffffff",
                 fontFamily: "'JetBrains Mono',monospace",
                 fontSize: "0.82rem", fontWeight: 700, letterSpacing: "0.2em",
                 textTransform: "uppercase", border: "none", cursor: "pointer",

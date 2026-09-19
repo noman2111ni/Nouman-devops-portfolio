@@ -2,17 +2,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;600;700&display=swap");
 
 :root {
-  --bg: #ffffff;
-  --bg2: #f8f9fb;
-  --bg3: #f0f3f7;
-  --cyan: #0084d9;
-  --orange: #ff6b35;
-  --purple: #7c3aed;
-  --white: #1a1a1a;
-  --muted: #6b7280;
-  --muted2: #9ca3af;
-  --card: rgba(0, 0, 0, 0.03);
-  --border: rgba(0, 0, 0, 0.08);
+  --bg: #f8fafc;
+  --bg2: #eef4ff;
+  --bg3: #e2e8f0;
+  --primary: #2563eb;
+  --primary-soft: rgba(37, 99, 235, 0.12);
+  --secondary: #7c3aed;
+  --accent: #f97316;
+  --success: #22c55e;
+  --text: #0f172a;
+  --text-soft: rgba(15, 23, 42, 0.72);
+  --muted: #475569;
+  --muted2: #64748b;
+  --card: rgba(15, 23, 42, 0.02);
+  --border: rgba(15, 23, 42, 0.08);
+  --shadow: rgba(37, 99, 235, 0.12);
 }
 
 *,
@@ -29,11 +33,15 @@ html {
 }
 
 body {
-  background: var(--bg);
-  color: var(--white);
+  background: linear-gradient(180deg, #f8fafc 0%, #eef4ff 100%);
+  color: var(--text);
   font-family: "Syne", sans-serif;
   overflow-x: hidden;
   line-height: 1.6;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.18);
 }
 
 ::-webkit-scrollbar {
@@ -43,7 +51,7 @@ body {
   background: var(--bg2);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--cyan);
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
   border-radius: 4px;
 }
 

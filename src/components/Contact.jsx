@@ -2,11 +2,9 @@ import { useState, useEffect } from "react";
 import { useVisible } from "../hooks/useAnimations";
 import { personalInfo } from "../data/portfolioData";
 
-// ─── EmailJS IDs ───────────────────────────────────────────
-const EMAILJS_SERVICE_ID  = "service_bsngf1y";   // ← apna paste karo
-const EMAILJS_TEMPLATE_ID = "template_w3s7rgd";  // ← apna paste karo
-const EMAILJS_PUBLIC_KEY  = "invL2s9IptlaB5knx"; // ← yeh already set hai
-// ──────────────────────────────────────────────────────────
+const EMAILJS_SERVICE_ID  = "service_bsngf1y";
+const EMAILJS_TEMPLATE_ID = "template_w3s7rgd";
+const EMAILJS_PUBLIC_KEY  = "invL2s9IptlaB5knx";
 
 export default function Contact() {
   const [ref, visible] = useVisible();
@@ -20,7 +18,6 @@ export default function Contact() {
     return () => window.removeEventListener("resize", h);
   }, []);
 
-  // Load EmailJS CDN
   useEffect(() => {
     if (window.emailjs) {
       window.emailjs.init(EMAILJS_PUBLIC_KEY);
@@ -41,7 +38,6 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
 
-    // Wait agar EmailJS load na hua ho
     if (!window.emailjs) {
       setStatus("error");
       return;
@@ -70,22 +66,22 @@ export default function Contact() {
 
   const inputStyle = {
     width: "100%", padding: "13px 16px",
-    background: "rgba(0,0,0,0.03)",
-    border: "1px solid rgba(0,0,0,0.08)",
-    color: "#1a1a1a",
+    background: "rgba(15,23,42,0.02)",
+    border: "1px solid rgba(15,23,42,0.08)",
+    color: "#0f172a",
     fontFamily: "'JetBrains Mono',monospace", fontSize: "0.83rem",
     outline: "none", transition: "border-color 0.3s",
   };
 
   const btnColors = {
-    idle:    { bg: "#0084d9", text: "Send Message →" },
+    idle:    { bg: "#2563eb", text: "Send Message →" },
     sending: { bg: "#7c3aed", text: "Sending..." },
     sent:    { bg: "#22c55e", text: "✓ Email Sent!" },
     error:   { bg: "#ef4444", text: "✗ Failed. Try Again" },
   };
 
   return (
-    <section id="contact" style={{ padding: isMobile ? "80px 24px" : "110px 60px", background: "rgba(240,243,247,0.5)" }}>
+    <section id="contact" style={{ padding: isMobile ? "80px 24px" : "110px 60px", background: "rgba(37,99,235,0.03)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
         <div ref={ref} style={{
@@ -93,21 +89,20 @@ export default function Contact() {
           opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(24px)",
           transition: "all 0.7s ease",
         }}>
-          <p style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.72rem", letterSpacing: "0.35em", color: "#0084d9", textTransform: "uppercase", marginBottom: 12 }}>// Contact</p>
+          <p style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.72rem", letterSpacing: "0.35em", color: "#2563eb", textTransform: "uppercase", marginBottom: 12 }}>// Contact</p>
           <h2 style={{ fontSize: "clamp(2rem,5vw,3.5rem)", fontWeight: 800, lineHeight: 1.1 }}>
             Let's{" "}
-            <span style={{ background: "linear-gradient(135deg,#0084d9,#ff6b35)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+            <span style={{ background: "linear-gradient(135deg,#2563eb,#f97316)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Connect
             </span>
           </h2>
-          <p style={{ marginTop: 16, color: "rgba(26,26,26,0.4)", maxWidth: 440, margin: "16px auto 0" }}>
+          <p style={{ marginTop: 16, color: "rgba(15,23,42,0.55)", maxWidth: 440, margin: "16px auto 0" }}>
             Available for freelance work and full-time opportunities. Let's build something great.
           </p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 48 : 60 }}>
 
-          {/* Left: Info */}
           <div style={{ opacity: visible ? 1 : 0, transform: visible ? "translateX(0)" : "translateX(-28px)", transition: "all 0.7s 0.2s ease" }}>
             <div style={{
               display: "inline-flex", alignItems: "center", gap: 8,
@@ -115,33 +110,33 @@ export default function Contact() {
               letterSpacing: "0.18em", border: "1px solid rgba(34,197,94,0.3)",
               padding: "7px 16px", marginBottom: 32, background: "rgba(34,197,94,0.05)",
             }}>
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#22c55e", boxShadow: "0 0 6px #22c55e", animation: "pulse 2s infinite" }} />
+              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#22c55e", boxShadow: "0 0 6px rgba(34,197,94,0.7)", animation: "pulse 2s infinite" }} />
               Open to Opportunities
             </div>
 
             <h3 style={{ fontWeight: 800, fontSize: isMobile ? "1.2rem" : "1.45rem", marginBottom: 28 }}>
-              Ready to automate <span style={{ color: "#0084d9" }}>your infrastructure?</span>
+              Ready to automate <span style={{ color: "#2563eb" }}>your infrastructure?</span>
             </h3>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               {[
-                { icon: "📧", label: "Email",    value: personalInfo.email,    color: "#0084d9" },
+                { icon: "📧", label: "Email",    value: personalInfo.email,    color: "#2563eb" },
                 { icon: "🐙", label: "GitHub",   value: personalInfo.github,   color: "#7c3aed" },
-                { icon: "💼", label: "LinkedIn", value: personalInfo.linkedin, color: "#ff6b35" },
-                { icon: "📍", label: "Location", value: personalInfo.location, color: "#0084d9" },
+                { icon: "💼", label: "LinkedIn", value: personalInfo.linkedin, color: "#f97316" },
+                { icon: "📍", label: "Location", value: personalInfo.location, color: "#2563eb" },
               ].map((item, i) => (
                 <div key={i} style={{
                   display: "flex", alignItems: "center", gap: 16, padding: "16px 18px",
-                  background: "rgba(0,0,0,0.02)",
+                  background: "rgba(15,23,42,0.02)",
                   border: `1px solid ${item.color}15`, borderLeft: `2px solid ${item.color}`,
                   transition: "all 0.3s", cursor: "pointer",
                 }}
-                  onMouseEnter={e => { e.currentTarget.style.background = "rgba(0,0,0,0.04)"; e.currentTarget.style.transform = "translateX(6px)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = "rgba(0,0,0,0.02)"; e.currentTarget.style.transform = "translateX(0)"; }}
+                  onMouseEnter={e => { e.currentTarget.style.background = "rgba(15,23,42,0.04)"; e.currentTarget.style.transform = "translateX(6px)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = "rgba(15,23,42,0.02)"; e.currentTarget.style.transform = "translateX(0)"; }}
                 >
                   <span style={{ fontSize: "1.3rem" }}>{item.icon}</span>
                   <div>
-                    <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.62rem", color: "#6b7280", letterSpacing: "0.18em", textTransform: "uppercase" }}>{item.label}</div>
+                    <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.62rem", color: "#475569", letterSpacing: "0.18em", textTransform: "uppercase" }}>{item.label}</div>
                     <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.8rem", color: item.color, marginTop: 3, wordBreak: "break-all" }}>{item.value}</div>
                   </div>
                 </div>
@@ -149,32 +144,31 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right: Form */}
           <div style={{ opacity: visible ? 1 : 0, transform: visible ? "translateX(0)" : "translateX(28px)", transition: "all 0.7s 0.3s ease" }}>
             <form onSubmit={handleSubmit}>
               <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 14, marginBottom: 14 }}>
                 {[["name", "Name", "Your Name"], ["email", "Email", "your@email.com"]].map(([name, label, ph]) => (
                   <div key={name}>
-                    <label style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.65rem", color: "#6b7280", letterSpacing: "0.18em", textTransform: "uppercase", display: "block", marginBottom: 7 }}>{label}</label>
+                    <label style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.65rem", color: "#475569", letterSpacing: "0.18em", textTransform: "uppercase", display: "block", marginBottom: 7 }}>{label}</label>
                     <input
                       name={name} value={form[name]} onChange={handleChange}
                       type={name === "email" ? "email" : "text"} placeholder={ph} required
                       style={inputStyle}
-                      onFocus={e => e.target.style.borderColor = "#0084d9"}
-                      onBlur={e => e.target.style.borderColor = "rgba(0,0,0,0.08)"}
+                      onFocus={e => e.target.style.borderColor = "#2563eb"}
+                      onBlur={e => e.target.style.borderColor = "rgba(15,23,42,0.08)"}
                     />
                   </div>
                 ))}
               </div>
 
               <div style={{ marginBottom: 20 }}>
-                <label style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.65rem", color: "#6b7280", letterSpacing: "0.18em", textTransform: "uppercase", display: "block", marginBottom: 7 }}>Message</label>
+                <label style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "0.65rem", color: "#475569", letterSpacing: "0.18em", textTransform: "uppercase", display: "block", marginBottom: 7 }}>Message</label>
                 <textarea
                   name="message" value={form.message} onChange={handleChange}
                   placeholder="Tell me about your project..." required rows={6}
                   style={{ ...inputStyle, resize: "vertical" }}
-                  onFocus={e => e.target.style.borderColor = "#0084d9"}
-                  onBlur={e => e.target.style.borderColor = "rgba(0,0,0,0.08)"}
+                  onFocus={e => e.target.style.borderColor = "#2563eb"}
+                  onBlur={e => e.target.style.borderColor = "rgba(15,23,42,0.08)"}
                 />
               </div>
 
@@ -187,8 +181,8 @@ export default function Contact() {
                 clipPath: "polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)",
                 transition: "all 0.3s", opacity: status === "sending" ? 0.8 : 1,
               }}
-                onMouseEnter={e => { if (status === "idle") { e.target.style.background = "#ff6b35"; e.target.style.transform = "translateY(-2px)"; } }}
-                onMouseLeave={e => { if (status === "idle") { e.target.style.background = "#0084d9"; e.target.style.transform = "translateY(0)"; } }}
+                onMouseEnter={e => { if (status === "idle") { e.target.style.background = "#f97316"; e.target.style.transform = "translateY(-2px)"; } }}
+                onMouseLeave={e => { if (status === "idle") { e.target.style.background = "#2563eb"; e.target.style.transform = "translateY(0)"; } }}
               >
                 {status === "sending" ? (
                   <span style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
